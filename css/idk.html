@@ -1,0 +1,220 @@
+<html> 
+    <head> 
+        <title> html </title>
+    
+    <style> 
+        header{
+            position: fixed;
+            top: 10px; 
+            width: 100%;
+            background-color: lightblue
+            
+        }
+        footer{
+            position: fixed;
+            bottom: 10px;
+            width: 50%;
+            background-color: lightgray;
+            z-index: 1; /*this decides priority of which is front and which is back */
+        }
+        #s1 {
+            position: relative;
+            top: 100px; /*try making these negative and all and all and try. */
+            padding: 5px;
+            background-color: lightyellow;
+            border-style: double;
+            width: 50%;
+            z-index: 1; /*try changing this to 3 and see what happens */
+        }
+        #s2 {
+            position: relative;
+            top: 120px;
+            padding: 10px;
+            background-color: pink;
+            border-radius: 4px solid lightblue;
+            width: 50%;
+        }
+        #d1{
+            width: 10%;
+            height: 20px;
+            position: absolute;
+            border: 1px black;
+            background-color: chocolate;
+            z-index: 2;
+        }
+        body{ /*we apply background image or color in body section so that the whole content will get the bg. if it is not possible to cover the whole bg with a single image, it will repeat. 
+            or we can have attachement fixed vs scroll such that you scroll but the bg wont change*/
+            background-image: url(TT.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed; /*try changing this to scroll*/
+        }
+    </style>
+    </head>
+    <body> 
+        <header> 
+            <h3>CSS Box Model and Selectors</h3>
+            <p>This document explains the CSS box model and various selectors used in styling HTML elements.</p>
+        </header>
+        <main> main document </main>
+        <section id="s1"> 
+            Section with articles: 
+            <article> article 1</article>
+            <article> article 2</article>
+        </section>
+        <p style="text-shadow: 5px 5px chocolate; text-align: center; position: absolute;">
+            text shadow example, hello there, I am a text shadow apparently, idek what that means but thats what i am because yes. thats how things are sometimes in life and theres not much you can do. gotta stay on and git goin, yknow what i mean laddys? 
+        </p>
+         <br><br>
+         <section id="s1">
+        <p >
+            PLEASE LOOK INTO THE LIL SCROLLBOX THINGY WITH TEXT IN IT AND DROPDOWN MENU IN SLIDES.
+            ALSO SEE SUPERSCRUPT, SUBSCRUPT, SHIFTLEFT, SHIFTRIGHT, positive and negative values.
+        </p>
+        </section>
+        <br><br>
+        <section id="s2"> 
+            Section with divs: 
+            <div> div 1</div>
+            <div> div 2</div>
+        </section>
+        <section id="d1"> <!--as seen, this is overlapping with section 1 or something, hence we use z-index to not overlap and all-->
+            &nbsp;Hello there!
+        </section>
+        <section id="s1"> 
+            Section with articles: 
+            <article> article 1</article>
+            <article> article 2</article>
+        </section>
+        <section id="s2"> 
+            Section with divs: 
+            <div> div 1</div>
+            <div> div 2</div>
+        </section>
+        <section id="d1"> <!--as seen, this is overlapping with section 1 or something, hence we use z-index to not overlap and all-->
+            &nbsp;Hello there!
+        </section>
+        <section id="s1"> 
+            Section with articles: 
+            <article> article 1</article>
+            <article> article 2</article>
+        </section>
+        <section id="s2"> 
+            Section with divs: 
+            <div> div 1</div>
+            <div> div 2</div>
+        </section>
+        <section id="d1"> <!--as seen, this is overlapping with section 1 or something, hence we use z-index to not overlap and all-->
+            &nbsp;Hello there!
+        </section>
+        <section id="s1"> 
+            Section with articles: 
+            <article> article 1</article>
+            <article> article 2</article>
+        </section>
+        <section id="s2"> 
+            Section with divs: 
+            <div> div 1</div>
+            <div> div 2</div>
+        </section>
+        <section id="d1"> <!--as seen, this is overlapping with section 1 or something, hence we use z-index to not overlap and all-->
+            &nbsp;Hello there!
+        </section>
+        <section id="s1"> 
+            Section with articles: 
+            <article> article 1</article>
+            <article> article 2</article>
+        </section>
+        <section id="s2"> 
+            Section with divs: 
+            <div> div 1</div>
+            <div> div 2</div>
+        </section>
+        <section id="d1"> <!--as seen, this is overlapping with section 1 or something, hence we use z-index to not overlap and all-->
+            &nbsp;Hello there!
+        </section>
+        <section id="s1"> 
+            Section with articles: 
+            <article> article 1</article>
+            <article> article 2</article>
+        </section>
+        <section id="s2"> 
+            Section with divs: 
+            <div> div 1</div>
+            <div> div 2</div>
+        </section>
+        <section id="d1"> <!--as seen, this is overlapping with section 1 or something, hence we use z-index to not overlap and all-->
+            &nbsp;Hello there!
+        </section>
+        <section id="s1"> 
+            Section with articles: 
+            <article> article 1</article>
+            <article> article 2</article>
+        </section>
+        <section id="s2"> 
+            Section with divs: 
+            <div> div 1</div>
+            <div> div 2</div>
+        </section>
+        <section id="d1"> <!--as seen, this is overlapping with section 1 or something, hence we use z-index to not overlap and all-->
+            &nbsp;Hello there!
+        </section>
+        <section id="s1"> 
+            Section with articles: 
+            <article> article 1</article>
+            <article> article 2</article>
+        </section>
+        <section id="s2"> 
+            Section with divs: 
+            <div> div 1</div>
+            <div> div 2</div>
+        </section>
+        <section id="d1"> <!--as seen, this is overlapping with section 1 or something, hence we use z-index to not overlap and all-->
+            &nbsp;Hello there!
+        </section>
+        
+        <footer>
+            Footer content
+        </footer>
+
+    </body>
+</html>
+
+<!-- Box model:
+represents the structure of an HTML element, including its content, padding, border, and margin.
+<span>: inline element, used to style a part of the text without breaking the flow
+<div>: block element, used to group elements
+
+block level elements:
+starts on a new line and takes up the full width available.
+
+inline elements:
+doesnt start on a new line and only takes up as much width as necessary.
+
+CSS box model defines how elements are displayed and how they interact with each other in terms of spacing and layout.
+
+rendered element occupies a box:
+1. Content: The actual content of the element, such as text or images.
+2. Padding: The space between the content and the border, providing inner spacing.
+3. Border: The line surrounding the padding and content, defining the element's outer edge.
+4. Margin: The space outside the border, separating the element from others.
+all of these can be categorized as top, bottom, left and right
+
+Position property:
+1. Static: Default position, elements are positioned according to the normal flow of the document.
+2. Relative: Positioned relative to its normal position, allowing for adjustments without affecting the layout of other elements.
+3. Absolute: Positioned relative to the nearest positioned ancestor (not static), allowing for precise placement
+4. Fixed: ALways in the same position
+5. Sticky: Combines relative and fixed positioning, allowing the element to stick to a specified position when scrolling.
+
+eg. div {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+
+Background property:
+Length units:
+1. Pixels (px): Fixed size, e.g., `width: 100px;
+
+Relative length units: -->

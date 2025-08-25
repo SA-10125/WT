@@ -1,0 +1,72 @@
+<!--pl ref htmlforms.html-->
+<html>
+<head>
+    <title>Forms-HTML</title>
+</head>
+<body>
+    <form action="mailto:surajacharya2005@gmail.com" method="post" target="_blank"> <!--target meaning where to redirect after submission-->
+        <label>First Name</label>
+        <input type="text" id="txt1" name="fname" />
+        <br> <!--inputs are inline elements, they dont move to the next line by themselves, hence we use break line tag. <br> -->
+        <label>Last Name</label>
+        <input type="text" id="txt1" name="lname" /> <br><br>
+
+
+        <label>Radio buttons</label> <br>
+        <input type="radio" id="rd1" name="rd1" />Option 1 <br>
+        <input type="radio" id="rd2" name="rd1" />Option 2 <br>
+        <input type="radio" id="rd3" name="rd1" />Option 3 <br> 
+        <!--without grouping/categorizing the radio buttons, you can select multiple, but thats what buttons/checkboxes are for.
+        radio buttons meaning only one of the three can be selected at any time.--> 
+        <!--hence we make all of them the same name but different ids. If all three had different names, all 3 could be checked at once.-->
+        <br><br>
+        <label>Checkbox</label> <br>
+        <input type="checkbox" name="chk1" id="chk1" value="brkfast" checked /> chk1<br> <!--checked meaning if you dont uncheck it, this is checked by default.-->
+        <input type="checkbox" name="chk1" id="chk2" /> chk2<br>
+        <input type="checkbox" name="chk1" id="chk3" /> chk3<br>
+        <!--as you can see, in the checkbox, even if we give the same name to all 3, they can all be selected at the same time. Because thats what checkbox be like.
+        If you want to change that and make it such that you can only select one or two of them, youll have to do stuf in the js-->
+        <br><br>
+
+        <!--dropdown is not an input type, its a seperate tag like select.-->
+        <label>Select dropdown/Menu</label><br>
+        <select name="slt2" size=2> <!--by default, size is 1. try that also. -->
+            <option value="select1" selected >First option</option> <!--selected meaning if you dont choose anything, this is the one selected by default.-->
+            <option value="select2">Second option</option>
+            <option value="select3">imagine having options</option>
+        </select>
+        <br><br>
+
+        <label>TextArea</label><br> <!--can be resized by user tho.-->
+        <Textarea name="txt" rows="20" cols="40" placeholder="Adress, not more than 20 words." ></Textarea> <!--placeholder meaning when theres nothing typed in, itll be there faintly in bg-->
+        <br><br><hr>
+
+        <input type="button" value="clickmedaddy"><br>
+        <input type="submit" value="Submit"> <!--may not submit everything. check.-->
+        <br><br>
+        <button type="submit">Submit!</button> <!--by default, sends as post into the URL.--> <!--cause type=submit-->
+        <button type="reset">Reset</button> <!--resets form fields in the html and removes all data from the forms-->
+        <button type="clear">Clear</button> <!--submits the form and then clears the inputs, but the data has gone via submit-->
+
+        <br><br>
+        <label>Email</label>
+        <input type="email" /> <!--auto validates email ID before submit to see if it has @ and all like a valid email ID-->
+        <br><br>
+        <label>Phone number</label>
+        <input type="tel" name="phono" > <!--required meaning mandatory field to fill before subnmittion-->
+            <!--pattern meaning you cant submit unless the pattern user enters matches your pattern. TODO: pl look into-->
+        <br><br>
+
+        <input type="date" name="dt"> <br>
+        <input type="datetime" name="datetime"> <br>
+        <input type="time" name="tm"> <br>
+        <input type="color"> <br>
+        <input type="range" name="rng"> <br>
+        <input type="number" name="num"> <br>
+
+        
+        <!--look into fieldset (like grouping?), legend, -->
+
+    </form>
+</body>
+</html>

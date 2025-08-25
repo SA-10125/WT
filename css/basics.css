@@ -1,0 +1,16 @@
+/* 
+CSS stands for cascading style sheets and selectors.
+
+I missed until properties because i was late/ Please see properties and all from slides.
+
+Color values: Name (like red, hotpink, etc), RGB (rgb(255,0,0)), Hexadecimal etc...
+
+Please look into conflicts!
+Inline > Internal > External > Web browser default
+
+*/
+
+p{
+    color: green;
+    background-color: peachpuff;
+}

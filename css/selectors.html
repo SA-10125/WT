@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>CSS</title>
+        <style>
+            p{
+                color: red;
+            }
+            span{
+                color: blue;
+            }
+            span#top{ /* here we are saying for the span with the id "top" should get this attriubte */
+                color: brown;
+            }
+
+
+            #p1{ /*so this is again using the id. so we use the # for ids*/
+                color: green;
+            }
+            #p2{
+                color: rgb(31, 40, 48);
+            }
+            .sp1{ /*. refers to class elements. */
+                background-color: aqua; 
+            }
+
+            a:link{ /*These are all pseudo tags that change which tag is invoked based on the state of the link. */
+                color: red;
+            }
+            a:visited{ /*after you have clicked it. like the bright purple, dark purple in google. */
+                color: green;
+            }
+            a:hover{
+                color: blue;
+            }
+            a:active{ /*active meaning, during the clicking */
+                color: yellow;
+            }
+
+
+            ol::first-line{ /*only the first line of the ordered list will be orange */
+                color: orange;
+            }
+
+        </style>
+    </head>
+    <body>
+        <span><p>paragraph in span</p></span>
+        <span>span without paragraph</span>
+        hello there
+        <br>
+        <span id="top">This is a span with an ID</span>
+        <br>
+        <span id="top">Same id reused again</span>
+
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <br><br>
+
+        <p id="p1">paragh 1</p>
+        <p id="p2">paragh 2</p>
+        <p id="p3">paragh 3</p>
+
+
+        <span class="sp1"> Span 1</span>
+        <span class="sp2"> Span 2</span>
+        <span class="sp1">span 3 like 1 tho</span>
+
+        <!--pseudo class: -->
+        <br><br>
+        <a href="http://google.com">Im the link</a>
+
+        <ol>
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+        </ol>
+
+        <!--please look into nested selector and all -->
+
+</html>

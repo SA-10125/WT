@@ -1,0 +1,277 @@
+<html>
+    <head>
+        <title>Title is this</title>
+    </head>
+    <body>
+
+         <!--this is a sample css -->
+        <!-- <style>dl {
+            display: block;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 0;
+            margin-right: 0;
+        }</style> -->
+
+
+        This is the body. I also have a nice body.
+        <p>paragraph</p><p>next paragraph</p> <!--paragraph tag is a block element since it moves to the next line/block-->
+        <br>lol <!--br stands for break line-->
+        <hr>ill report you to HR now.
+        <hr>
+        <p><b> or not...</b> <!--this bold tag is an inline element as it does not move to the next line.--> </p>
+        <i>italics it seems. just cause it looks like leaning tower of pisa</i>
+
+        <h1>or maybe i should...</h1> <!-- also an inline element.-->
+        <h2>header 2</h2>
+        <h3>header 3</h3>
+        <h4>and so on</h4>
+        <h5>not limitless tho</h5>
+        <h6>lmao</h6>
+
+        <p>   i need some space   </p>
+        <p> &nbsp; &nbsp; &nbsp; i need some space</p> <!--imp rmmbr nbsp stands for Non-Breaking Space-->
+
+        <hr><!--stands for horizontal line-->
+        <p>i dont wanna be in the same line as you man.</p>
+        <p>i dont wanna be in the same <br> line as you man.</p>
+
+
+
+        <!--do lists later pls. ordered, unordered, descriptive.-->
+        <ol> <!--ordered list.--> <!--try seeing if you can get roman numerals etc in this-->
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ol>
+
+        <ul> <!--unordered list-->
+            <li>one</li>
+            <li>tower</li>
+            <li>three</li>
+        </ul>
+
+        <dl> <!--descriptive lists--> <!--can change attributes of these elemetns using css-->
+            <dt> This is about <!--description term--> </dt>
+            <dd> lists of hot drinks <!--description details --></dd>
+            <dt>Coffee</dt>
+                <dd>Black hot drink</dd>
+            <dt>Milk</dt>
+                <dd>White cold drink</dd>
+        </dl>
+
+        <!--lets try to nest dem lists shall we-->
+        <ul>
+            <li>Sem I:</li> 
+            <ul>
+                <li>python</li>
+                <ul><li>was fun</li></ul>
+                <li>chem</li>
+                <li>etc</li>
+            </ul>
+
+            <li>Sem II:</li> 
+            <ul>
+                <li>C</li>
+                <li>phy</li>
+                <li>etc</li>
+            </ul>
+
+            <li>Sem III:</li> 
+            <dl>
+                <dt>DSA</dt>
+                <dd>idk how it is yet</dd>
+                <dt>WT</dt>
+                <dd>I like this one. V chillin and useful and interesting and ...</dd>
+            </dl>
+        </ul>
+
+        <br>
+        <hr>
+        <p> &amp;<!--ampersand--> </p>
+        <p> &lt; <!--less than--> </p>
+        <p> &gt; <!--greater than--> </p>
+        <p> H<sub>2</sub>O is water</p> <!--subscript-->
+        <p> 49<sup>3</sup> is 117649</p> <!--superscript-->
+
+        <hr>
+        <br>
+        <p>Hyperlink:</p>
+        <a href="TT.jpg"> time table </a> <!--here, href is called an attribute of a-->
+        <br>
+        <a href="wt2023_1.pdf"> QP </a>
+        <br>
+        <a href="https://google.com"> find out more </a>
+
+        <hr>
+        <br>
+        <p>Images:</p>
+        <a href="http://pesuacademy.com/Academy/s/studentProfilePESU"> <img src="TT.jpg" alt="time table"> </a> <!--here, source and alt are called attributes of image--> 
+        <!--alt is alternate text to display in case image is not available. (optional)-->
+        
+        <hr>
+        <br>
+        <h1>Tables omg, hell yeah</h1>
+        <table > 
+            <th>Table Header</th>
+            <caption>Table heading</caption>
+            <tr>table row </tr>
+            <td>value cell</td>
+            <td>one more cell</td>
+            <th>one more header</th>
+            <tr></tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <tr>one more row</tr>
+            <td>this row also has many cells lmao</td>
+            <td>like how does this work tho</td>
+        </table>
+
+        <br>
+        <hr>
+        <br>
+
+        <table border="border"> <!-- if you do it without the border="border" attribute, the border wont be visible lines, itll be invisible, but rest will be same. like in the above table-->
+            <th>Numbers</th>
+            <caption>just some numbers</caption>
+            <tr>1-5 </tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <tr>5-10
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            </tr> <!--this tr can start and end at <tr>5-10</tr> or <tr>5-10 rest of row </tr>, no change in the look-->
+        </table>
+
+        <br>
+        <hr>
+        <br>
+
+        Tables: <br> <!--THIS IS THE TECHNICALLY CORRECT WAY TO DO IT.-->
+            <table border= "border">
+                <caption> horizontal header </caption>
+                <tr>
+                    <th> name </th>
+                    <th> srn </th>
+                    <th> sem </th>
+                </tr>
+                <tr> 
+                    <td> abc </td>
+                    <td> 1 </td>
+                    <td> 3 </td>
+                </tr>
+                <tr> 
+                    <td> def </td>
+                    <td> 2 </td>
+                    <td> 4 </td>
+            </table>
+
+            <br><br>
+            <table border="border">
+                <caption> vertical header </caption>
+                <tr>
+                    <th> name </th>
+                    <td> abc </td>
+                    <td> def </td>
+                </tr>
+                <tr> 
+                    <th> srn </th>
+                    <td> 1 </td>
+                    <td> 2 </td>
+                </tr>
+                <tr> 
+                    <th> sem </th>
+                    <td> 3 </td>
+                    <td> 4 </td>
+                </tr>
+            </table>
+
+            <br>
+            <hr><br>
+            
+            <table border="">
+                <caption> columnspan (colspan)</caption>
+                <tr>
+                    <th colspan="2"> name </th>
+                    <th> srn </th>
+                    <th> sem </th>
+                </tr>
+                <tr> 
+                    <td> abc-fn </td> <!--fn and ln as in first and last name-->
+                    <td> abc-ln </td>
+                    <td> 1 </td>
+                    <td> 3 </td>
+                </tr>
+                <tr> 
+                    <td> def-fn </td>
+                    <td> def-ln </td>
+                    <td> 2 </td>
+                    <td> 4 </td>
+            </table>
+
+            <br><br>
+            <table border="border">
+                <caption> rowspan </caption>
+                <tr>
+                    <th rowspan="2"> name </th>
+                    <td> abc-fn </td>
+                    <td> def-fn </td>
+                </tr>
+                <tr>
+                    <td>abc-ln</td>
+                    <td>def-ln</td>
+                </tr>
+                <tr> 
+                    <th> srn </th>
+                    <td> 1 </td>
+                    <td> 2 </td>
+                </tr>
+                <tr> 
+                    <th> sem </th>
+                    <td> 3 </td>
+                    <td> 4 </td>
+                </tr>
+            </table>
+
+            <br><hr><br>
+
+            <!--IMP THIS ONE IS AWESOME, SEE IT AND UND IT OMG-->
+            <table border="border">
+                <caption>this year is my year</caption>
+                <tr>
+                    <th rowspan="2">Sno</th>
+                    <th rowspan="2">Course</th>
+                    <th rowspan="2">Subject</th>
+                    <th colspan="2">Marks</th>
+                    <th rowspan="2">Total</th>
+                </tr>
+                <tr>
+                    <th>Internal</th>
+                    <th>External</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td rowspan="2">CSE</td>
+                    <td>sub1</td>
+                    <td>20</td>
+                    <td>40</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <!--<td rowspan="2">CSE</td>-->
+                    <td>sub1</td>
+                    <td>22</td>
+                    <td>43</td>
+                    <td>65</td>
+                </tr>
+            </table>
+        <br><hr><br>
+
+    </body>
+</html>

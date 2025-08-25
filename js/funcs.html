@@ -1,0 +1,52 @@
+<html>
+    <body>
+        <script>
+            function add(a,b){
+                return a+b;
+            }
+            console.log(add(3,5));
+            
+            //hoisting (func hoisting)
+            hello(); //as you can see, it is called before it is declared. This is because of hoisting which kinda moves the declerations to the top ig?
+            function hello(){
+                console.log("Hello");
+            }
+
+            //hoisting 2
+            a=10;
+            function hoist(mybool){
+                if(mybool){
+                    a=20;
+                    console.log(a);
+                }
+                console.log(a);
+            }
+            console.log("Outisde,before calling, a is "+a);
+            hoist(false);
+            console.log("F: Outisde,after calling, a is "+a);
+            hoist(true);
+            console.log("T: Outisde,after calling, a is "+a);
+
+            ref1=function(...args) //variable number of args to a func.
+            {
+                var s=0;
+                for(var i in args){
+                    s=s+args[i];
+                }
+                return s;
+            }
+            console.log(ref1(1,2,3,4));
+            console.log(ref1(4,6))
+
+            //Arrow function
+            arrfunction=(x,y)=>x-y; //arrow function is shorthand function. does definition and declaration and everything all together.
+            //lot of arrow funcs are used in JS for event handling and built in objects etc.
+
+            console.log(arrfunction(8,3));
+
+            //I missed a lil
+
+
+        </script>
+    </body>
+</html>

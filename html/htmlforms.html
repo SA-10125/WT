@@ -1,0 +1,45 @@
+<!--Radio buttons, buttons, checkboxes, dropdown menu, textbox, Text Area, (this line is supported in basic HTML form)
+Numbers, Date, Time, Email, Color, Range, FieldSet, Legend, (this line is additional widgets/tags present in the HTML file. )-->
+
+<!--Purpose of forms is to take user/any input and send/share it to the backend (via submit button), Can Share/Recieve data also via forms.-->
+
+<!-- Attributes:
+        Action (what do you want to do with the form? submit? recieve?)
+        Method (get/post)
+        Target (stay on same page? redirect?)
+-->
+<!--(do see slides btw)-->
+<!--
+Get:
+    Appends form data to the URL in name/value pairs.
+    Never use it for sending sensitive data. (cause its seen in URL)
+    Length of URL is limited to 2048 chatracters
+    Useful for submission where a user wants to bookmark a result.
+    good for stuff like query strings in google.
+
+POST:
+    Appends form data inside the body of the HTTP request, (not in URL) (the request that is sent to backend, sometimes encrypted)
+    No size limitations.
+    Cannot be bookmarked (like pesucademy pages)
+-->
+
+<!--all widgets are used via input element/type-->
+<input type="text"> 
+<input type="radio"> <!--radio button, select one option-->
+<input type="checkbox"> <!--can select one or more options-->
+<input type="submit"> <!--sends the response (data) back-->
+<input type="button"> <!--just a clickable button.-->
+
+<!--can use label tag to provide context to users.-->
+<!--attributes are added to input tags
+    1. type (cause sometimes you need textbox and sometimes you need datetime.)
+    2. ID (to identify which input is which)   
+    3. Name (to identify which input is which but readable (i think. pl check)) 
+    4. Value (used in stuff like buttons. if value=submit, thats the value (pl look into, am lil confused.))
+    5. Size (like number of options visible.)
+    6. Placeholder (like a hint of what to enter.)
+    7. Min, Max (for numbers.)
+    8. Selected (like if you want a box checked by default unless user unchecks it.)
+    9. Required (like mandatory to fill fields)
+    10. Pattern (how do you want the input to be. like a1b2c3)
+    -->

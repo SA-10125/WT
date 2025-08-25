@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        let arr1=['one', 'two', 'three'];
+        console.log(arr1);
+        //I missed a lil
+
+        let s=toString(arr1);
+        console.log(s);
+        console.log(typeof(s));
+        console.log(arr1.length);
+        console.log(arr1);
+        arr1.pop();
+        console.log(arr1);
+        var v=arr1.shift();
+        console.log(v);
+        console.log(arr1);
+        arr1.unshift("beg");
+        console.log(arr1);
+        arr2=[1,2,3,4,5];
+        console.log(arr1.concat(arr2)); //concat will just merge or append arrays
+        console.log(arr1.join(arr2)); //join meaning you can put as seperator which you can use to join elements of array etc ygtp.
+        console.log(arr1.join("$"));
+        arr3=arr1.concat(arr2);
+        console.log(arr3);
+        console.log(arr3.slice(3,6));
+        console.log(arr3.splice(3)); //splice meaning one parameter. it will start with three till it reaches the last.
+        //maybe splice removes those elements after printing them? idk look into it pls
+        console.log(arr3);
+        arr3.push("four","five","six"); 
+        console.log(arr3);
+        console.log(arr3.splice(-3)); //-ve meaning prints first three chars
+        console.log(arr3);
+        console.log(arr3.reverse());
+        //I missed a lil
+        arr4=["one","two","three","four"];
+        arr5=[4,5,33,44,12,2,3,5,70];
+        console.log(arr4.sort()); //sorts based on ascii value
+        console.log(arr5.sort()); //its sorting based on ascii values (default=lexicographic). not based on number values.
+        console.log(arr5.sort(function(a,b){return b-a;})); //now this works and sorts based on number values. 
+        //above line: a-b will give ascending order, b-a will give descending order
+        //sort uses a comparison function to decide order. if the comparison function returns -ve number, a comes before b. if +ve number, b after a. if 0, dont change the order.
+        //
+
+
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
