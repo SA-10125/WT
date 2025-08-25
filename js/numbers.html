@@ -5,13 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-    const n=123; //change this to n=abc and try
+    const n='123'; //change this to n=abc and try. can also try with double quotes or no quotes.
     if(isNaN(n)){
         console.log("is a char");
     }
     else{
         console.log("is a num");
     }
+
+    //Math
+    var n1=123.45; //is a number (theres no int and float)
+    console.log(Math.floor(n1));
+    console.log(Math.ceil(n1));
+    console.log(Math.round(n1));
+    var rnd=1+Math.floor(Math.random()*99); //1,2,...,98 //(gets a random decimal bw 0 and 1 and multiplies by 99 then floors it)
+    console.log(Math.floor(Math.random()*5)); //0,1,2,3,4 
+    console.log(Math.random()); //bw 0 and 1
+    console.log(rnd);
+
 
     </script>
 </head>
