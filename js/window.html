@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //I Missed a bit, pls look into in slides or smthn.
+        //window
+        //location (object having location details like href, path, etc)
+        //history(object keeping broswer history)
+        //localStorage(local cache for storing user info)
+        //innerHeight, innerWidth (dimensions)
+        //alert(text)
+        //copy rest of the objects of window.
+
+        //setTimeout and setInterval
+        //timout meaning run func after the interval of time.
+        //interval meaning run a dunc repeatedly starting after the interval of time, then repeating at that interval of time
+        //syntax: let timerID=setInterval(func|code, [delay (in milliseconds)], [arg1], [arg2],...)
+        //syntax: let timerID=setTimeout(func|code, [delay], [arg1], [arg2], ...)
+
+        let timerID=setInterval( ()=>(alert("Hi")) ,8000); //8000 milliseconds=8 seconds // => means arrow function as we have discussed before apparently. pls look into ;-;
+        setTimeout(()=>{clearInterval(timerID); alert("Stop");} ,20000); //arrow func again btw. we are stopping the timer and saying stop after 20 secs
+        
+        //counter to print 1-10 with 25 delay
+        count=0;
+        function log(){
+            console.log(count);
+            count++;
+            if(count==11){
+                clearInterval(t);
+            }
+        }
+        var t=setInterval(log,2000); //prints one every 2 seconds
+
+        //theres a way to add delay also i think. you can even use it to sort lmao. try it out
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
