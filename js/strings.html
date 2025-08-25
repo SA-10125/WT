@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        //Strings
-        var str1="abcdefghi";
-        console.log(str1.charAt(4)); //which character is at position 4?
-        console.log(str1.length);
-        str2="12345";
-        console.log(str1.concat(str2));
-        var date="2024-12-15";
-        console.log(date.split("-"));
-        console.log()
-    </script>
-</head>
-<body>
-    
-</body>
+<html> 
+    <head> 
+        <title> strings </title>
+    </head>
+    <body> 
+        <script> 
+            str1 = "abcdef";
+            str2 = "ghijkl";
+            str3 = str1.concat(str2)
+            console.log(str1.length);
+            console.log(str1.concat(str2));
+            var date = "28-08-2025";
+            console.log(date.split("-"));
+            console.log(str1.split(""));
+            console.log(str3.substring(3,6)); //similar to slice
+            console.log(str3.substring(3));   //similar to spice
+            console.log(str2.substr(-3));
+            console.log(str2.replace("l", "L"));
+            console.log(str1.toUpperCase());
+        </script>
+    </body>
 </html>
