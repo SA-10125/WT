@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //user defined objects:
+            // object literal
+            // constructor
+            // anonymous function
+            // class and object
+
+        // class Student{ //like structs
+        //     name;
+        //     SRN;
+        //     Sem;
+        // }S;
+
+        //new keyword allocates memory and allows us to create an object. (a prototype). internally, it calls a constructor.
+        //prototype inheritence and all is not in our syllabus it seems. but its there in slides. wont be asked tho.
+        //i missed so much, i missed most of it, pls do from slides etc.
+
+        class Student{
+            firstname=fn;
+            lastname=ln;
+            display=function(){
+                console.log("first name "+fn);
+                console.log("last name "+ln);
+            }
+        }
+        var fn="abc";
+        var ln="def";
+        var s1= new Student(); //PLS UND THIS AND HOW IT WORKS
+        s1.display();
+
+        var employee={ //PLS UND THIS
+            ename:"e1",
+            ssn:123,
+            show:function(){document.write(employee.ename+" "+employee.ssn)}
+        }
+
+        employee.show()
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
