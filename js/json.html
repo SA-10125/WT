@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var text='{"fname":"ABC","srn":123}';
+        //json string to object
+        var obj=JSON.parse(text);
+        console.log(obj.fname+' '+obj.srn);
+
+        //object to json string
+        var str=JSON.stringify(obj);
+        console.log(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

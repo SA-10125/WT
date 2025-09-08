@@ -5,7 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        //
+        var text="<bookstore>" +
+        "<book>" +
+            "<title>Boot title</title>"+
+            "<author>Book-author</author>"+
+            "<year>2023</year>"+
+            "</book>"+
+        "</bookstore>";
+
+        //I have missed dom, dom parser etc. pls cover up.
+
+        //str to obj.
+        var parser=new DOMParser();
+        var xmlobj=parser.parseFromString(text,"text/xml");
+        console.log(typeof(xmlobj));
+        title=xmlobj.getElementsByTagName("title")[0];
+
+        //obj to str
+        str=new XMLSerializer();
+        sxml=str.serializeToString(xmlobj);
+        console.log(typeof(sxml));
+        console.log(sxml);
+        
+
+        title.childNodes[0].nodeValue="New Book Title"; //modifying the title tag value.
+        document.getElementById('p1').innerText=title.childNodes[0].nodeValue; 
+        //explanation of above line:
+                // It finds an HTML element and sets its displayed text to the text inside the XML <title>.
+
+                // document.getElementById('p1'): gets the HTML element with id="p1".
+                // .innerText = ...: sets the element’s visible text.
+                // title: is the first <title> element from your parsed XML.
+                // title.childNodes[0]: the first child node of <title>, typically a Text node.
+                // .nodeValue: the string value of that Text node (e.g., "Boot title").
+
+                // Gotchas:
+                // childNodes[0] can be whitespace if your XML has indentation. Safer: use textContent.
+                // innerText is slower and respects CSS visibility; textContent is usually better for simple text.
+                // Suggested simpler/safer line:
+        
 
     </script>
 
