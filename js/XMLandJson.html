@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //I missed a couple classes ngl. pls cover up.
+        //can represent data formats with a hierarchical structure.
+        //HTML meaning elements are within the tag. talks about the structure of your data. By looking at the tab, you can get to know that you have info related to that tag.
+        //XML stands for eXtensible Markup Language. It is a markup language much like HTML used to store and transport data.
+        //tags will have info related to data that we want to store.
+
+        <empinfo>
+            <employees>
+                <employee>
+                    <name>John Doe</name>
+                    <age>30</age>
+                    <position>Software Engineer</position>
+                </employee>
+                <employee>
+                    <name>Jane Smith</name>
+                    <age>25</age>
+                    <position>Data Analyst</position>
+                </employee>
+            </employees>
+        </empinfo>
+        //advantage of this is that we can have heirarchical structre.
+        //disadvantage is that there is a lot of repetetion of tags like employee and name and age.
+            //so it increases the size of the file compared to csv (3x as much). cause more than data, storage goes in writing these tags only.
+            //browser should support xml files.
+
+        //xml is case sensitive btw.
+        //it is human readable and most browsers have inbuilt xml readers.
+        //it was the first heirarchical data format and most APIs support it and have built in functionality to convert xml data streams (string) into native data structures like objects and back.
+        //for conversion of string to object and object to string, we use parsers.
+
+
+        //JSON stands for JavaScript Object Notation.
+        //It as created as an alternative to XML
+        //It represents heriachial data using commas, curly braces and brackets.
+        
+        // {"empinfo":{"employees":[
+        //                         {"name":"James","age":30,"position":"Software Engineer"},
+        //                         {"name":"Anna","age":25,"position":"Data Analyst"},
+        //                     ]}}
+
+        //hence simpler and more compact than XML, like csv.
+        //since it is new, its was less common to have support than XML.
+
+        //functions for converting:
+        //Json strings to object: JSON.parse()
+        //object to json string: JSON.stringify()
+
+        //functions for converting:
+        //XML strings to object: DOMParser
+        //object to XML string: XMLSerializer
+
+        //so you can send strings from your server to JS and convert into JS objects.
+        
+        //json string:
+        '{"name":"John","age":30,"city":"New York"}'
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
