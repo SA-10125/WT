@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <p id="p1"></p>
+    <script>
+        //I MISSED THIS ;-; do.
+        function display(print){
+            document.getElementById("p1").innerHTML=print;
+        }
+        function f1(){display("ABC");}
+        function f2(){display("XYZ");}
+        f1(); //try changing this to f2 then f1.
+        //f2(); //in this case, f2 will run immediately after f1 so you cant see the ABC.
+        setTimeout(f2,1000); //f2 will run after 1 seconds.
+        
+        //this is synchronous code. f1 will run completely then f2 will run.
+    </script>
+</head>
+<body>
+    <p id="p1"></p>
+</body>
+</html>

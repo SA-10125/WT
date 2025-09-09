@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //I missed like 40 minutes. please forgive. catch it up.
+        //I didnt und this also, see later.
+
+        //f1(a,cf1)
+        //f2(a,f1)
+        //f3(a,f2)
+        //this is callback hell. please look into. i missed it.
+
+        // p=new Promise //executor function
+        // function1(function(){ //can be either fullfilled, rejected or pending states. if it gets rejected with an error, can you try-catch block.
+        //     //producing code
+        // })
+        // function1{
+        //     //consuming code (try and catch)
+        // }
+
+        //promise is a special JS object that handles async operations.
+        //it represents a value that may be available now, or in the future, or never(in case of error).
+        //it is more readable async code compared to callbacks.
+        //a promise can be in one of three states:
+            //1. pending: initial state, neither fulfilled nor rejected. (undefined value)
+            //2. fulfilled: meaning that the operation completed successfully. (gives value)
+            //3. rejected: meaning that the operation failed. (error object (then try and catch these errors))
+
+        //promise meaning may not be available at the moment when the code line executes.
+        //Promise object contains the promise which is an executor function that has resolve or reject as a callback.
+        //essentially a promise is a returned object to which you attach callbacks instead of passing callbacks to a func. //und ig, idk
+
+        let success=true; //try changing to false to see rejection handling.
+
+        //lets define a promise.
+        //the promise constructor takes an executor function that has two parameters: resolve and reject.
+        //so you can see the parameter itself is a function (being defined then and there) which inside uses a set timeout and an if else.
+        let p = new Promise(function(resolve,reject){
+            //Simulate async operation
+            setTimeout(function(){
+                if(success){
+                    resolve("Success!");
+                }
+                else{
+                    reject("Failed.");
+                }
+            },1000); //1 second delay cause of the setTimeout
+            console.log("Pending"); //this will run immediately, before the timeout.
+        });
+
+        //now lets use that promise
+        p
+        .then(function(result){
+            console.log(result); //runs if resolved
+        } )
+        .catch(function(error){
+            console.log(error); //runs if rejected
+        });
+
+        let promise = new Promise(function(resolve,reject){const x="apple";const y="apple";if(x===y){resolve();}else{reject();}});
+
+        promise
+        .then(function(){console.log("Successful!");})
+        .catch(function(){console.log("Errorful!");});
+
+        //callbacks are gunctions passed ot another function as a reference. 
+        // chaining of callbacks is clumsy and is called callback hell.
+        //chaining of promises is better.
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

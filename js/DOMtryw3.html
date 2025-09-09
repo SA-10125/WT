@@ -9,10 +9,66 @@
         //HTML DOM properties are values (of HTML Elements) that you can set or change.
 
         //DOM (Document Object Model) lets your JS to access and manipulate HTML.
-        
+        //property is a vlaue that you can get or set like content of a HTML element
+        //method is an action you can do like add or delete HTML element
+
     </script>
 </head>
 <body>
-    
+    <p id="demo">This is a paragraph.</p>
+    <script>
+        setTimeout(function() {
+            //this next line is the DOM
+            document.getElementById("demo").innerHTML = "Hello World!"; //setting the inner HTML for it into the paragraph with that ID
+        }, 1000); //after 1000 ms
+        //getElementById is a method and innerHTML is a property
+
+        //finding html elements
+            //getElementById()
+            //getElementsByTagName() 
+            //getElementsByClassName()
+
+        //changing html elements
+        //element.innerHTML
+        //element.attribute=new_val
+        //element.style.property=new_style //css shii
+        //element.setAttribute(attribute, value) 
+        //element.getAttribute(attribute)
+        // element.property = value
+
+        
+        //adding and deleting html elements
+        //document.createElement(element) //creates an element
+        //document.removeChild(element) //removes element
+        //document.appendChild(element) //add an element
+        //document.replaceChild(new, old) //replace an element
+        document.write("This is a test"); //writes directly to the HTML document
+
+        //adding event handlers: like onclick
+        //element.onclick = function(){code} or 
+        //document.getElementById("link").onclick=function(){code};
+
+        //theres finding HTML elements also.
+        //you can find elements by id, tag name, class name, CSS selectors, or HTML object collections
+        let element=document.getElementById("intro"); //gets the intro id'd element
+        element=document.getElementsByTagName("p"); //gets all paragraph elements.
+
+        //now you can use these in conjucture to build on each other.
+        //like to find all elements of a certain ID within the html then in those, find all paragraphs of that ID, 
+        const x=document.getElementById("main");
+        const y=x.getElementsByTagName("p"); //all paragraphs within the main element
+        //or
+        const z=document.getElementById("main").getElementsByTagName("p");
+
+        const a=document.getElementsByClassName("intro"); //gets all elements with the intro class
+
+        //getting all elements with a certain CSS selector
+        const b=document.querySelectorAll("p.intro"); //all paragraph elements with the intro class
+
+        //can also get by html object collections.
+        //for example, document.forms["formID"]; gives all the forms in the doc with id="formID"
+        
+
+    </script>
 </body>
 </html>

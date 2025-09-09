@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //async and await in JS are used to sumplify andling async using promises.
+        //asunc lets us write promise based code as if it were sync
+        //async keyword before a fun means that func returns a promise.
+
+        const getData = async()=>{let data="Hello world";return data;} //imp und
+
+        getData().then(data=>console.log(data)); //prints hello world
+
+        //await is a keyword which makes the code wait and pauses the async function until promise returns a result.
+        //returns the resolved value or throws error if promise is rejected.
+
+
+        //PLease see this from slides and go through and do. (next class)
+        async function getData2(){
+            try{
+            let response = await fetch('https://jsonplaceholder.typicode.com/users'); //fetch returns a promise
+            //now request is sent to this API.
+            console.log("Response received");
+            console.log(response);
+            }
+            catch(error){
+                console.log("Error: ",error);
+            }
+            let data = await response.json(); //response.json() also returns a promise
+            return data;
+        }
+
+        getData2()
+        .then(data=>console.log(data))
+        .catch(error=>console.log("Error in getData2: ",error));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
