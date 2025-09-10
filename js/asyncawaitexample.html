@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <p id="p1">hloo</p>
+    <script>
+        //this is an example of async/await without fetch.
+        function display(print){ //changes the content of p1 to whatever is passed.
+            document.getElementById("p1").innerHTML=print;
+        }
+
+        async function function1(){ 
+            return "Hello";
+        }
+
+        function1() //calling func1 and the return value will be a promise. in this case, a positive one. so it goes to then.
+        .then(function (value){display(value)})
+        .catch(function (error){display(error)});
+
+
+        async function function2(){
+            let p=new Promise(function(resolve,reject){resolve("success")});
+            //this is the promise that will be 
+            
+            //this is where were calling the await. this waits for the result of p (the promise) 
+            // before changing the innerHTML of p1 to sucess.
+            document.getElementById("p1").innerHTML=await p; 
+        }
+
+        setTimeout(function2,1000); //giving timeout so that you can see whats going on.
+
+
+
+        //example of async/await with try/catch
+        function func1(print){ //changes the content of p1 to whatever is passed.
+            document.getElementById("p1").innerHTML=print;
+        }
+
+        function getPromise(){
+            return new Promise((resolve,reject)=>{
+                let x=0;
+                if(x==0){resolve("ok");}
+                else{reject("not ok");}
+            });
+        }
+
+        async function run(){
+            try{
+                let value=await getPromise();
+                func1(value);
+            } 
+            catch(error){
+                func1(error);
+            }
+        }
+        setTimeout(run,2000); //giving timeout so that you can see whats going on.
+
+
+        async function getData(){
+            let response = await fetch("https://jsonplaceholder.typicode.com/todos"); //http request-Get
+            let data=await response.json(); 
+            //response comes in json as status,header and content. but we only want the content. 
+            // so we use the .json() method which parses the json into a js object.
+            return data;
+        }
+
+        getData().then(function(data){console.log(data);});
+
+        //using fetch, we can do sequential api calls. (one after the other)
+        //but if we want to do parallel api calls, we need a chain of promises.
+        //so we use promise.all() method which takes an array of promises and returns a single promise that resolves when all of the promises in the array have resolved. -check this idk
+        //again uses fetch and async/await.
+
+        //next class see how to use fetch with sequential and parallel api calls. then we go for nodejs
+
+
+    </script>
+</body>
+</html>
