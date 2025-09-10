@@ -13,7 +13,135 @@
 
         //Math,Number,String,Array,Date,window,document are some builtins.
 
+        //Array: 
+        let arr=new Array(1,2,3);
+        console.log(arr[-1]); //undefined
+        arr[-1]=20;
+        console.log(arr); //strange behaviour, i know.
+
+        let a=function(){console.log("yolo");} //funcs are also objects.
+
+            
+        var arr2=[1,"hello",2,3,(function(){console.log("hi");}),arr,a];
+        //arrays are heterogenous. can store anything including objects and functions.
+        arr2[4](); //calls the function stored at index 4
+        arr2[6]();
+        console.log(arr2[5][1]); //accessing the array stored at index
+
+        console.log(arr2.length);
+        arr2.length=10;
+        console.log(arr2); //rest is filled with empty elements
+        arr2.length=2;
+        console.log(arr2); //rest is truncated
+        arr2.length=5;
+        console.log(arr2); //truncated part is not restored
+
+        //push -add element to end of arr
+        //pop - remove last element
+        //shift - remove first element
+        //unshift - add element to beginning
+        //join - join all elements into a string
+        //indexOf - find index of element
+        //sort - sort elements (default is lexicographical ascending)
+        //concat - merge arrays
+        //slice - get subarray
+
+        arr2.push("new");
+        arr2[arr2.length]="putting"; //pushing
+        console.log(arr2[arr2.length-1]); //prints last element
         
+        let str=arr.toString(); //comma seperated by deafult
+        console.log(str);
+
+        let str2=arr.join(); //comma seperated by deafult
+        let str3=arr.join(" ");
+        console.log(str2+' '+str3);
+
+        console.log(arr.pop()); //arr.pop() returns the removed element (last element)
+
+        //shift removes first element. unshift adds passed element to the start of the string. (like push and pop but for start of arr) 
+        // (shift also returns the removed element) (unshift returns the new length of the array)
+
+        arr3=[1,2,3,4,5];
+        delete arr3[2]; //deletes the element but does not change the length of the array (deleted element is empty)
+        console.log(arr3);
+        console.log(arr3.slice(1,3))
+        console.log(arr3.slice(2)) //from index 2 to end
+        console.log(arr3.slice(-2)) //last 2 elements
+        console.log(arr3);
+        //check and und this above shit. im moving on.
+
+        //splice() removes or replaces existing elements and/or adding new elements in place.
+        //splice(start_index, delete_count, item_to_insert1, item_to_insert2, ...)
+        const a1=[1,2,3,4,5];
+        const removed=a1.splice(1,2); //removes 2 elements from index 1 and returns it
+        console.log(a1); //[1,4,5]
+        console.log(removed); //[2,3]
+
+        a1.splice(1,0,2,3); //insert 2,3 at positon 1, delete_count=0
+        console.log(a1); //[1,2,3,4,5]
+
+        a1.splice(1,1,'b'); //replaces second element with 'b'. start at index 1, delete_count=1, new elements='b'
+        console.log(a1); //[1,'b',3,4,5]
+
+        console.log(a1.concat(arr3));
+        arr3.reverse();
+        console.log(arr3);
+        arr3.sort(); //look into sorting. it is done lexically and all. if you wanna sort differently, you can pass compare_functions to it for the same. cool stuff.
+        console.log(arr3);
+        arr3.sort((a,b)=>a-b); //numeric ascending (passing compare function)
+        arr3.sort((a,b)=>b-a); //numeric descending 
+
+
+//         MAX_VALUE : represents the maximum numeric value representable in JavaScript.
+        // • MIN_VALUE: represents the minimum numeric value representable in JavaScript.
+        // • NaN – Not a Number
+        // • POSITIVE_INFINITY 
+        // • NEGATIVE_INFINITY 
+        // • Operations resulting in errors return NaN 
+        // • Use isNaN(a) to test if a is NaN 
+        // • toString method converts a number to string
+
+        function sanitize(x){
+            if(isNaN(x)){
+            return NaN;
+            }
+            else{
+                return Number(x);
+            }
+        };
+
+        console.log(sanitize("123")); //123
+        console.log(sanitize("hello")); //NaN
+
+        //see string and date also in slides. (and math and window)
+        var d=new Date();
+        //window:
+        // location: object containing location details like href, path  etc.
+        // history: object containing the browser history 
+        // localStorage: object containing a local cache for storing user info
+        // innerHeight, innerWidth: dimensions of the display area of the browser
+        // alert(text): method to display a dialog box with message
+        // prompt(text,default): method to seek input from user, returns string
+        // confirm(text): method to show a confirmation dialog
+
+
+        // setInterval, clearInterval: start/stop performing action repeatedly after an interval
+        // setTimeout, clearTimeout: start/stop performing action once after a timeout period
+
+//         setTimeout allows us to run a function once after the interval of time.
+//           Example:     
+            function sayHi(phrase, who) {alert( phrase + ', ' + who );}
+			setTimeout(sayHi, 1000, "Hello", "John"); // Output: Hello, John (after 1 second = 1000ms)
+
+// setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
+// It has the same syntax as setTimeout: 
+    // repeat with the interval of 2 seconds
+	    let timerId = setInterval(() => alert('tick'), 2000);  //UND!
+	    // after 5 seconds stop
+	    setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000); //UND!
+
+
 
     </script>
 </head>
