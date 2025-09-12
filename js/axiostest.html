@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+    <!--the CDN that lets us use axios-->
+</head>
+<body>
+    <p id="p1"></p>
+    <input type="button" name="get data" id="get data" onclick="getdata()" value="get data"> 
+    <!--this button calls the getdata() function in the script.-->
+    <script>
+        function getdata(){ //the getdata() function we defined gets the response from the axios and uses a then catch for the returned promise.
+            axios.get("https://jsonplaceholder.typicode.com/users/1")
+            .then(function(response){document.getElementById("p1").innerHTML="Deets: "+response.data.name+": "+response.data.phone;console.log(response.data)})
+            .catch(function(error){console.log("Error");})
+
+            event.preventDefault(); //This prevents form from refreshing when the submit button is pressed.
+            //to prevent that, and get the ID instead of sending data and refreshing the page, we use this line.
+
+
+
+            axios.get("https://jsonplaceholder.typicode.com/users/1" ,userData)
+            .then(function(response){console.log(response);})
+            .catch(function(error){console.log("Error2");})
+        }
+
+        //do the post later pls!
+    </script>
+</body>
+</html>

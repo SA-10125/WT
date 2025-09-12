@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        //AXIOS
+        //auto converts json data so no need of json parser.
+        // can be used using browser (frontend) or using nodeJS (backend) using npm install axios. 
+            //can use CDN (content delivery network) which is an external file to the program which will support the axios.
+        
+        //axios is a open source js library which simplifies process of sending async http request to REST endpoints and handles responses.
+        //so it supprots request and response (get and post)
+        //it suppports get, post, put, delete http requests
+        //it automatically transforms json data so no parser needed
+        //it is a promise based api and returns a promise
+        //allows handling of timeout and cancellation of requests.  
+        
+        //npm install axios. import axios from 'axios';
+        //including in htms: via cdn link in your HTML file.
+        // <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"> //min meaning compressed version
+        //this is not usually reccomended cause you would need to connect to the net and to api to use it.
+        //but install meaning just install to your system.
+
+
+        //sending post requests/
+        axios.post('https://jsonplaceholder.typicode.com/posts', {
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+          })
+          .then(function (response) {
+            console.log(response.data);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+          //sending get request
+          axios.get('https://jsonplaceholder.typicode.com/posts/1')
+          .then(function (response) {
+            console.log(response.data);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+
+          //comon request options (feautures of axios)
+          //setting headers: customize http headers for requests like autherization tokens, content types, custom headers, etc.
+          //rest is in slides, see. along with example.
+          // btw side note look into timeout: 5000
+
+          //handling responses: 
+          //response.data (has body)
+          //response.status (http status code)
+          //response.headers (http headers)
+          //can configure and change default setttings too.
+
+          //use .catch() or try-catch
+
+        </script>
+
+</head>
+<body>
+    
+</body>
+</html>
