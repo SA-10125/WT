@@ -8,6 +8,43 @@
         // An object is an unordered list of properties consisting of a name (always a string) and a value. 
         // When the value of a property is a function, it is called a method.
         
+        //this in js is kinda like self was in python. in the outer global scope, it is the window.
+
+        //creating a js objec via {} key value pairs
+        var emp2={
+            "firstname":"Aadesh",
+            "lastname":"omg",
+            "showname":function(){console.log(this.firstname+' '+this.lastname);},
+        };
+
+        //specifies object members and their values in the curly brackets as key-value pairs.
+
+
+        //creating a js object via constructor.
+        //this is the meth that i like more. its not just like one time object. its a constructor that can make many.
+        function Employee(fname, lname){
+            this.firstName=fname;
+            this.lastName=lname;
+            this.showname=function(){console.log(this.firstName+' '+this.lastName);}
+        }
+
+        var newemp=Employee("arun","teja");
+        newemp.showname();
+        
+
+        //you can also do it via an anonymous constructor function used once.
+        var myemp=function(){
+            this.firstName="arun";
+            this.lastName='teja';
+            this.showname=function(){console.log(this.firstName+' '+this.lastName);}
+        }; //so this makes a anonymous constructor and then calls it immideatly.
+
+        myemp.showname();
+
+
+
+
+
     </script>
 </head>
 <body>

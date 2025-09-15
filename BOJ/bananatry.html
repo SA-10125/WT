@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Samarpana Run Registration</title>
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: orange;
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-size: 22px;
+    }
+    .sub-header {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    .form-box {
+      background: #fff;
+      width: 90%;
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+    .form-header {
+      background: green;
+      color: white;
+      text-align: center;
+      padding: 8px;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 6px;
+      border: 1px solid #ccc;
+    }
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+    table {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 5px;
+      text-align: center;
+    }
+    .buttons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
+      padding: 8px 14px;
+      border: none;
+      cursor: pointer;
+    }
+    .reset-btn {
+      background: #d9534f;
+      color: #fff;
+    }
+    .submit-btn {
+      background: #5cb85c;
+      color: #fff;
+    }
+    @media(max-width: 600px) {
+      .buttons {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>Samarpana Run</header>
+  <div class="sub-header">
+    For the Indian Army! <br>
+    <span id="datetime"></span>
+  </div>
+
+  <div class="form-box">
+    <div class="form-header">Registration Form</div>
+    <form id="regForm">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" id="name" placeholder="e.g. Aanya Rao">
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" id="email" placeholder="e.g. aanya@college.edu">
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Mobile Number *</label>
+        <input type="text" id="mobile" maxlength="10" placeholder="9876543210">
+        <div class="error" id="mobileError"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Date of Birth *</label>
+        <input type="date" id="dob">
+      </div>
+
+      <div class="form-group">
+        <label>University/Organization *</label>
+        <input type="text" id="university" placeholder="e.g. PES University">
+      </div>
+
+      <div class="form-group">
+        <label>USN (College ID) *</label>
+        <input type="text" id="usn" placeholder="e.g. PES1UG24CS999">
+      </div>
+
+      <div class="form-group">
+        <label>City *</label>
+        <input type="text" id="city" placeholder="e.g. Bengaluru">
+      </div>
+
+      <div class="form-group">
+        <label>State *</label>
+        <input type="text" id="state" placeholder="e.g. Karnataka">
+      </div>
+
+      <div class="form-group">
+        <label>Pincode *</label>
+        <input type="text" id="pincode" maxlength="6" placeholder="560085">
+        <div class="error" id="pincodeError"></div>
+      </div>
+
+      <div class="form-group">
+        <label>T-shirt Size *</label>
+        <select id="tshirt">
+          <option value="">Select size</option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+          <option>XXL</option>
+          <option>3XL</option>
+        </select>
+        <div class="error" id="tshirtError"></div>
+      </div>
+
+      <table>
+        <tr>
+          <th>Size</th>
+          <th>Chest (in)</th>
+          <th>Chest (cm)</th>
+          <th>Length (cm)</th>
+        </tr>
+
+        <tr><td>XS</td><td>34"</td><td>86cm</td><td>65cm</td></tr>
+        <tr><td>S</td><td>36"</td><td>91cm</td><td>67cm</td></tr>
+        <tr><td>M</td><td>38"</td><td>97cm</td><td>70cm</td></tr>
+        <tr><td>L</td><td>40"</td><td>102cm</td><td>72cm</td></tr>
+        <tr><td>XL</td><td>42"</td><td>107cm</td><td>75cm</td></tr>
+        <tr><td>XXL</td><td>44"</td><td>112cm</td><td>77cm</td></tr>
+        <tr><td>3XL</td><td>46"</td><td>117cm</td><td>79cm</td></tr>
+      </table>
+
+      <div>
+        <input type="checkbox" id="agree"> I confirm the information is accurate and agree to the event terms and waiver.
+      </div>
+
+      <div class="buttons">
+        <button type="reset" class="reset-btn">Reset Form</button>
+        <button type="submit" class="submit-btn">Submit Form</button>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    // show date and time
+    function showDateTime() {
+      document.getElementById("datetime").innerText = new Date().toLocaleString();
+    }
+    setInterval(showDateTime, 1000);
+    showDateTime();
+
+    // validation
+    const form = document.getElementById("regForm");
+    form.addEventListener("submit", function(e){
+      let valid = true;
+
+      let email = document.getElementById("email").value;
+      if(!email.match(/^[^@]+@[^@]+\.[^@]+$/)){
+        document.getElementById("emailError").innerText = "Invalid email";
+        valid = false;
+      } else {
+        document.getElementById("emailError").innerText = "";
+      }
+
+      let mobile = document.getElementById("mobile").value;
+      if(!/^\d{10}$/.test(mobile)){
+        document.getElementById("mobileError").innerText = "Enter 10 digit number";
+        valid = false;
+      } else {
+        document.getElementById("mobileError").innerText = "";
+      }
+
+      let pincode = document.getElementById("pincode").value;
+      if(!/^\d{6}$/.test(pincode)){
+        document.getElementById("pincodeError").innerText = "Enter 6 digit pincode";
+        valid = false;
+      } else {
+        document.getElementById("pincodeError").innerText = "";
+      }
+
+      let tshirt = document.getElementById("tshirt").value;
+      if(tshirt === ""){
+        document.getElementById("tshirtError").innerText = "Please select size";
+        valid = false;
+      } else {
+        document.getElementById("tshirtError").innerText = "";
+      }
+
+      if(!document.getElementById("agree").checked){
+        alert("You must agree to the terms.");
+        valid = false;
+      }
+
+      if(!valid) e.preventDefault();
+      
+    });
+
+  </script>
+</body>
+</html>

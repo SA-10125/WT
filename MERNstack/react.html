@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //React:
+        //an open source JS library created by facebook in 2013
+        //enables single page apps with dast, dynamic updates not needing reloading.
+        //etc. slides.
+
+        //declarative, simple, component based, supports sercer side rendering, mobile support, extensice, fast, easy, supports JSX, single way data flow, virtual DOM. 
+        //single way data flow: data always flows from parent to child.
+            //props: passed down from parent to child (read only)
+            //callbacks/state updaters: chilcd can communicate changes up by invoking functions procided by the parent.
+            //action flows up and properties flow down.
+            //so reach searches for a root element like div or section or <> (react fragments) which are the single elements where execution will start. then from there it will go down to <p> and <h1> elements etc.
+            
+        //Virtual dom:
+            //it is a in-memory lightweight copy of the actual DOM. reach updates this before syncing it to the actual DOM
+            //makes it faster and more efficient. like partial updates etc. (it batches and optimizes updates and all)
+
+        //to create a react app:
+        //connect to wifi.
+        //meth1: legacy:
+            //npx create-react-app my-app
+            //cd my-app
+            //npm start
+            // http://localhost:3000/
+    
+        //meth2: Vite
+            //npm create vite@latest my-react-app --template 
+            //then you use arrow keys and choose a react framework
+            //enter
+            //select variant TypeScript (so that it can support jsx and main file and all)
+            //enter
+            //now cd to the my-react-app folder
+            //npm install
+            //(if you want axios. do npm install axios in directory.)
+            //npm run dev
+            //do h+enter if you wanna see more
+            // http://localhost:5173/
+
+            //src/main.tsx in this is an important file. it is the entry point where you app will start.
+            //to run the application, you will have to edit this and then run your application (idk look into)
+
+            //default contents of main.tsx:
+                // import { StrictMode } from 'react'
+                // import { createRoot } from 'react-dom/client'
+                // import './index.css'
+                // import App from './App.tsx'
+
+                // createRoot(document.getElementById('root')!).render(
+                // <StrictMode>
+                //     <App />
+                // </StrictMode>,
+                // )
+
+
+        //you can also directly import react into HTML using CDN links instead of installing.
+        // <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin> </script>
+        <!-- <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script> -->
+        <!-- but dont do this. -->
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
