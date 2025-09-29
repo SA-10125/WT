@@ -33,3 +33,16 @@ function App() {
 }
 
 export default App
+
+//I missed 1 hour of the lecture. pls do!
+// function App(){
+//   function handleClick(){alert('Button clicked!');}
+// }
+
+// return(
+//   <div>
+//     <h1>Hello</h1>
+//     <p>bruh</p>
+
+//   </div>
+// )

@@ -5,10 +5,11 @@ const element=(
   <div>
   <h2>Hello</h2>
   <p>2+2={2+2}</p>
+  <Inlinestyle />
   </div>
 );
 
-ReactDOM.createRoot(document.getElementById('root')).render(element); 
+ReactDOM.createRoot(document.getElementById('root')!).render(element); 
 //what this does: it creates a root and renders the element inside the root 
 //needed because in react we dont have direct access to the DOM
 //we use a virtual DOM and react takes care of updating the real DOM
@@ -56,3 +57,21 @@ ReactDOM.createRoot(document.getElementById('root')).render(element);
 //see JSX rendering in slides.
 
 //JQuery and webworks etc are not there in syllabus but there might be some pics of them in slides. can ignore.
+
+//I missed 1 hour. till styling. missed missed event stuff and buttons and all. pls do! imp!
+
+/*look into component scope styling. */
+/* <div style={{color:'red'}}> inline styling.</div> */
+
+//tailwind css omg!
+//chakra it seems. 
+
+//hooks+CSS 
+function Inlinestyle(){
+  return(
+  <div>
+    <p style={{color:'red'}}> Para 1</p>
+    <h2> Heading 2</h2>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(element); 

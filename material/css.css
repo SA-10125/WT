@@ -1,0 +1,46 @@
+/*
+Style Attributes
+    background-color: #FFFFFF
+    color:#000000; -> only for the text 
+    font-family:
+    font-size:
+    text-align:
+    border: 1px solid black (thickness, style, color)
+    padding: (space bw border and text)
+    margin:
+    text-decoration: 
+    background-image: url('image.png')
+    background-repeat:
+    background-attachment: 
+    background-size: 
+    border-collapse: 
+    border-radius:
+    border-style: dotted/solid/dashed etc 
+    padding/margin/border -top/left/right/bottom
+    border-spacing:
+    tr:nth-child(even) {
+    background-color: #D6EEEE;
+    } -> colors in only even numbered rows 
+        td:nth-child(even), th:nth-child(even) {
+    background-color: #D6EEEE;
+    }
+    list-style-type:circle
+    display: flex/grid;
+    max-width: 
+    max-height: 
+    
+
+
+*/
+/*
+tags
+    .text
+    p
+    a:link:
+    a:visited:
+    a:hover:
+    a:active:
+    (works for buttons, tr, ths etc etc) 
+    #id 
+
+*/
