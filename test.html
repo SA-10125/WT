@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology Showcase - PES University</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #6bbd50; 
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .showcase-container {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1 1 300px; 
+            min-width: 280px;
+            max-width: 400px;
+        }
+
+        .card h2 {
+            color: #174291;
+            margin-top: 0;
+            border-bottom: 2px solid #ff8c00;
+            padding-bottom: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            margin: 5px 0;
+            transition: background-color 0.3s;
+        }
+        
+        
+        #get-location-btn { background-color: #174291; }
+        #fetch-data-btn { background-color: #6bbd50; } 
+        #convert-btn { background-color: #ff8c00; } 
+
+        
+        #json-output-box {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', monospace;
+            min-height: 100px;
+        }
+
+        
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 100%; 
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web Technology Showcase</h1>
+    </header>
+
+    <main class="showcase-container">
+        <div class="card">
+            <h2>🎥 HTML5 Multimedia</h2>
+            <div class="content">
+                <video controls width="100%" height="auto">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <audio controls>
+                    <source src=" https://samplelib.com/lib/preview/mp3/sample-3s.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📍 Geolocation API</h2>
+            <div class="content">
+                <button id="get-location-btn">Get My Location</button>
+                <p id="location-output">Error fetching location.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⚙ Simulated Async Fetch</h2>
+            <div class="content">
+                <button id="fetch-data-btn">Fetch Data</button>
+                <p id="async-data-output">Name: WebTech Demo, Message: Data loaded successfully!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>☁ XML to JSON Conversion</h2>
+            <div class="content">
+                <button id="convert-btn">Convert</button>
+                <pre id="json-output-box">
+{
+"name": "John Doe",
+"course": "Web Technologies",
+"university": "PESU"
+}
+</pre>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            
+            const locationBtn = document.getElementById('get-location-btn');
+            const locationOutput = document.getElementById('location-output');
+
+            locationOutput.textContent = 'Error fetching location.'; // Initial state from image
+
+            locationBtn.addEventListener('click', () => {
+                if (!navigator.geolocation) {
+                    locationOutput.textContent = 'Geolocation is not supported by this browser.';
+                    return;
+                }
+
+                locationOutput.textContent = 'Fetching location...';
+
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        locationOutput.textContent = `Location: Lat ${lat}, Lon ${lon}`;
+                    },
+                    (error) => {
+                        
+                             locationOutput.textContent = 'Click the button to get your location.';
+
+                        
+                    }
+                );
+            });
+
+            
+            const fetchBtn = document.getElementById('fetch-data-btn');
+            const asyncOutput = document.getElementById('async-data-output');
+            
+            const simulateFetch = (delay) => {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        resolve({ 
+                            name: "WebTech Demo", 
+                            message: "Data loaded successfully!" 
+                        });
+                    }, delay); 
+                });
+            };
+
+            fetchBtn.addEventListener('click', async () => {
+                asyncOutput.textContent = 'Fetching data asynchronously...';
+                fetchBtn.disabled = true;
+
+                try {
+                    
+                    const result = await simulateFetch(1500);
+
+                    asyncOutput.textContent = `Name: ${result.name}, Message: ${result.message}`;
+
+                } catch (error) {
+                    asyncOutput.textContent = 'Error simulating fetch.';
+                } finally {
+                    fetchBtn.disabled = false;
+                }
+            });
+
+
+            
+            const convertBtn = document.getElementById('convert-btn');
+            const jsonOutputBox = document.getElementById('json-output-box');
+
+            
+            const sampleXml = `
+                <student>
+                    <name>John Doe</name>
+                    <course>Web Technologies</course>
+                    <university>PESU</university>
+                </student>
+            `;
+
+            const convertXmlToJson = () => {
+                
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(sampleXml, "text/xml");
+                const student = xmlDoc.getElementsByTagName("student")[0];
+                
+                
+                const jsonObject = {
+                    name: student.getElementsByTagName("name")[0].textContent,
+                    course: student.getElementsByTagName("course")[0].textContent,
+                    university: student.getElementsByTagName("university")[0].textContent
+                };
+
+                
+                const jsonString = JSON.stringify(jsonObject, null, 2);
+                
+                
+                jsonOutputBox.textContent = jsonString;
+            };
+
+            convertBtn.addEventListener('click', convertXmlToJson);
+
+            
+            convertXmlToJson();
+        });
+    </script>
+</body>
+</html>

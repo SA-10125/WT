@@ -1,0 +1,24 @@
+Installing MongoDB
+
+
+Step 1: Visit the official MongoDB download page: 	https://www.mongodb.com/try/download/community
+
+Step 2: Select
+Version: Latest stable release
+Platform: Windows / macOS / Linux
+Package: MSI Installer (for Windows)
+
+Step 3: 
+Run the Installer
+Choose Complete setup
+Enable "Install MongoDB as a Service"
+Optionally install MongoDB Compass (GUI)
+
+Open the Mongo Shell: "mongosh"
+
+mongosh 2.3.2 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+

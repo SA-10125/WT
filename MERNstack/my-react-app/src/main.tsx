@@ -1,15 +1,20 @@
-import React from 'react';
-import ReactDOM from "react-dom/client";
+// import React from 'react';
+// import ReactDOM from "react-dom/client";
 
-const element=(
-  <div>
-  <h2>Hello</h2>
-  <p>2+2={2+2}</p>
-  <Inlinestyle />
-  </div>
-);
+// const element=(
+//   <div>
+//   <h2>Hello</h2>
+//   <p>2+2={2+2}</p>
+//   <Inlinestyle />
+//   </div>
+// );
 
-ReactDOM.createRoot(document.getElementById('root')!).render(element); 
+// cd MERNstack
+// cd my-react-app
+// Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+// npm run dev
+
+// ReactDOM.createRoot(document.getElementById('root')!).render(element); 
 //what this does: it creates a root and renders the element inside the root 
 //needed because in react we dont have direct access to the DOM
 //we use a virtual DOM and react takes care of updating the real DOM
@@ -67,11 +72,156 @@ ReactDOM.createRoot(document.getElementById('root')!).render(element);
 //chakra it seems. 
 
 //hooks+CSS 
-function Inlinestyle(){
+// function Inlinestyle(){
+//   return(
+//   <div>
+//     <p style={{color:'red'}}> Para 1</p>
+//     <h2> Heading 2</h2>
+//   </div>);
+// }
+// ReactDOM.createRoot(document.getElementById('root')).render(element); 
+
+
+//I missed a couple classes. please learn this jazz ;-;
+//this is the stuff i missed in the exam also.
+
+//Complex components:
+//combining components to make complex components.
+//advantage is composability/compactness/reusability.
+//approach: identify the major visual elements and break them into induvidual componeents.
+//zoned out until transfer properteis. do do. 
+//transferPropsTo is deprecated. use spread operator {...props} instead and values can be given explicitly.
+//export, import, writing explicitly, look into.
+
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// import './index.css';
+
+// function SrchResult(){
+//  return(
+//  <div>
+//  <ResImage/>
+//  <ResCaption/>
+//  <ResLink/>
+//  </div>);
+// }
+
+// function ResImage(){
+//  return(
+//  <div>
+//  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/250px-Image_created_with_a_mobile_phone.png" alt="image bro."/>
+//  </div>);
+// }
+
+// function ResCaption(){
+//  return(
+//  <div>
+//  <p>Caption bro.</p>
+//  </div>);
+// }
+
+// function ResLink(){
+//  return(
+//  <div>
+//  <a href="https://doodles.google/" target="_blank" rel="noreferrer"> Link bro. </a>
+//  </div>);
+// }
+
+// ReactDOM.createRoot(document.getElementById('root')).render(<SrchResult/>);
+
+//this is a complex component made of smaller components.
+//we can reuse these smaller components in other complex components also.
+//we can also pass props to these components to make them more dynamic.
+//like we can pass the image url, caption text, link url as props to the respective components.
+//then we can use these components to create different search results with different data.
+//this is the power of components and props in react.
+//we can create a library of reusable components and use them to build complex UIs easily.
+//we can also use third party component libraries like material UI, ant design etc to get pre-built components.
+
+//look into keyword props. its supposed to have been done before.
+
+//here tho links and images are static. so we cant make templates out of it. This is the limitation of using static values like this.
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+
+function Result({src,text,link,linktext}){
   return(
-  <div>
-    <p style={{color:'red'}}> Para 1</p>
-    <h2> Heading 2</h2>
-  </div>);
+    <div>
+      <Img src={src} />
+      <Caption text={text} />
+      <Link link={link} linktext={linktext} />
+    </div>
+  )
 }
-ReactDOM.createRoot(document.getElementById('root')).render(element); 
+
+function Img({src}){
+  return(
+    <div>
+      <img src={src} alt="image bro."/>
+    </div>
+  )
+}
+
+function Caption({text}){
+  return(
+    <div>
+      <p>{text}</p>
+    </div>
+  )
+}
+
+function Link({link, linktext}){
+  return(
+    <div>
+      <a href={link} target="_blank" rel="noreferrer">{linktext}</a>
+    </div>
+  )
+}
+
+//since we are passing parameters to Result, we cant directly render it. we use another App function to pass the vallues and render result.
+function App(){
+  return(
+    <div>
+      <Result
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/250px-Image_created_with_a_mobile_phone.png"
+        text="Caption sis."
+        link="https://doodles.google/"
+        linktext="Link sis."
+      />
+    </div>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+
+//map functions exists in JS on arrays. 
+//each element in an array can be mapped to a new value which can be a primitive, object or even a react component.
+const nums=[1,2,3,4,5]
+const doubled=nums.map((number)=>number*2);
+console.log(doubled); // [2,4,6,8,10]
+//look into keys, how it helps react identify elements in virtual DOM, array index as key, why not to use index as key etc. I missed.
+//adding key property, etc etc i missed, pls do.
+
+function NumberList(props){
+  const numbers=props.numbers;
+  const listItems=numbers.map((num)=>(<li key={num.toString()}>{num*2}</li>));
+  return <ul>{listItems}</ul>;
+}
+const nums2=[1,2,3,4,5];
+
+ReactDOM.createRoot(document.getElementById('root')).render(<NumberList numbers={nums2}/>);
+//ive just written this using copilot, im yet to learn or und it. pls do.
+
+//i missed that full keys class atp.
+
+//synthetic events is almost identical to DOM events. it is used for event handling in react.
+//uses object called cross browser wrapper (not dependent on any particular browser. provides consistency across all browsers.)
+//prevent default and stop propogation look into.
+
+//you pass a function as the event handler.
+// <button onClick={handleClick}>Click me</button>
+//DOM events use lowercase. React events use camelCase.
+//bubbles, cancelable, currentTarget, defaultPrevented, eventPhase, isTrusted, isTrusted, nativeEvent, type, etc. (slides)
+//do the counter example.

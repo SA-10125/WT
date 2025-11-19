@@ -1,0 +1,126 @@
+nodejs allows us to run js on the server (cause usually js can only be run on the clients browser.)
+react is our frontend library which helps make our work easier 
+express is a web framework that helps us handle common tasks like routing, error handling, etc.
+
+now cd to backend folder and initialize nodejs application using 
+npm init -y (might have to enable running scripts before you try this. 
+                Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+            )
+(this gives us a packago.json file and we can install different packages (like express))
+npm install express (or npm express@4.18.2 (can provide specific versions))
+
+lets create a new file, convention is to call them index.js or app.js or server.js 
+further comments in server.js
+
+(adding this in the package.json to fix the errors. (something similar, changing some word to module int he type fixed it.)
+{
+  "type": "module", //changed from commonjs
+  "name": "your-project-name",
+  "version": "1.0.0",
+  ...
+}
+) this is only when youre doing import express from "express" 
+but if we use const express=require("express"), then this is not needed and we can leave package.json as we found it originally
+
+in package.json, we have 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js" 
+  },
+here, we have added the "dev" line.
+this says when we run ```npm run dev``` in cmd, it in turn runs the script ```node server.js``` 
+we want this since server.js is the file we want to run.
+
+now ive put all my files and stuff into a src folder (for cleanliness) and have reflected the same in the package.json so instead of node server.js its now node src/server.js
+update other paths also accordingly. (dont trust the vsc update imports)
+
+creating config folder inside src to connect to our free mongodb database (created online on https://cloud.mongodb.com) 
+and creating db.js file in it.
+username: surajacharya2005_db_user
+password: afmLazfWPEwH2th2 
+link: mongodb+srv://surajacharya2005_db_user:afmLazfWPEwH2th2@cluster0.s1k2tsp.mongodb.net/?appName=Cluster0
+
+created folder models.
+for now, making just one model Notes.js file
+
+am downloading postman to send get and post requests to my API to test it out. postman is a software that lets you send any api requests to any endpoint on localhost or online.
+
+have gone for free plan of upstash.com redis and made a database (for middleware and rate limiting)
+UPSTASH_REDIS_REST_URL="https://curious-polliwog-7927.upstash.io"
+UPSTASH_REDIS_REST_TOKEN="AR73AAImcDI4NzEzMjBkZmM4NmQ0M2Q2OTE3ZWUyZTU2NjRjMzhhM3AyNzkyNw"
+putting these in the .env file
+now we need to install
+npm install @upstash/ratelimit @upstash/redis
+creating upstash.js in the config folder
+creating a folder middleware where we will add our custom middlewares
+creating a ratelimiter.js in the middleware folder
+
+now we move on to frontend (ew frontend, i know, but still)
+now downloading react 
+```npm create vite .``` //the . is to say lets initialize it in the folder we are in (which is frontend)
+selecting react and js (though you can select ts if you want)
+now run ```npm install``` and ```npm run dev``` (runs vite since were in frontend)
+now run ```npm install react-router```
+now run ```npm install react-hot-toast``` for notifications
+
+now in src in frontend, deleting app.css
+deleting contents of index.css and app.jsx
+deleting assets folder
+now in app.jsx, type rafce and watch it autofill (needs ES7 extention in vsc)
+put the app in the routing in the main.jsx (see file to und)
+now making pages folder and HomePage file in it in src folder (and typing rafce in it and autocompleting)
+npm install react-router-dom
+ (in frontend)
+npm install react-hot-toast
+react-hot-toast.com
+
+tailwind css helps us put the css directly into the jsx file instead of a css file etc
+v3.tailwindcss.com //version 3 of tailwindcss, (is v stable and widely used, can use newer version if u want)
+go to Docs
+go to framework guides and then to Vite
+//https://v3.tailwindcss.com/docs/guides/vite (in frontend)
+``` 
+npm install -D tailwindcss@3 postcss autoprefixer 
+npx tailwindcss init -p
+```
+now in talwind.config.js, delete the contents and paste the contents from the documentation. (in frontend)
+update index.css file (copy paste from documentation)
+install tailwind intellisense extention on vsc
+
+now lets get daisyui.com (in frontend)
+its a tailwindcss library so basically looks really cool with like a couple lines (cause of prebuilt samples)
+for now, im using version 4 https://v4.daisyui.com/
+go to how to use
+install using npm i -D daisyui@v4.12.24
+now in tailwind.config.js in plugins put daisyui
+
+installing lucide-react ```npm install lucide-react``` (in frontend)
+installing axios ```npm install axios``` (can replace our fetch api with axios)
+created components folder in src and created navbar.jsx in it
+
+
+so far was setup, now we start building the app (#django was better, i know)
+
+for delete functionality, we want to include it in the NoteCard component while the rest of the functionalitys were in the file of that page.
+
+now we are done building pages and files and code.
+now we need to deploy the application
+for this, first push our code to github
+then use render.com free plan to deploy
+when pushing code to github, hide the .env file by creating a .gitignore file in the root directory (here, MERNlearn)
+```git init ```
+```git add . ```
+```git commit -m "initial commit" ```
+then ive published using vsc itself
+now render.com will need the node modules in order to deploy the app.
+so we create a file for them to be able to install our dependencies.
+so ```npm init -y``` (this creates a package.json file)
+now lets go to that file and create 2 scripts, one to manage backend and one to manage frontend.
+we create one called build which will install everything we need from backend and frontend and then run npm run build in the frontend (to make the frontend more optimized)
+this npm run build in the frontend creates a dist folder which has the optimized version of our react app.
+now try to run npm run build in your root folder (here, MERNlearn) so it does all this.
+
+now for this project, we wont be using :5173 and :5001 for frontend and backend
+only for this project, we feel like having them both in the same thingy (totally optional)
+(if we have both backend and frontend on the same domain, we wont have CORS errors)
+
